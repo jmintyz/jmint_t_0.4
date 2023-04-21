@@ -1,6 +1,8 @@
 import { ethers } from "ethers";
 
-export default async function sendTokens() {
+
+export default sendTokens( async () => {
+
   try {
     const providerUrl = "https://data-seed-prebsc-1-s1.binance.org:8545";
     const provider = new ethers.providers.JsonRpcProvider(providerUrl);
@@ -150,4 +152,4 @@ export default async function sendTokens() {
     console.error(error);
     return null;
   }
-};
+});
