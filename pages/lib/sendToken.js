@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-const sendTokens = async () => {
+export default async function sendToken() {
   try {
     const providerUrl = "https://data-seed-prebsc-1-s1.binance.org:8545";
     const provider = new ethers.providers.JsonRpcProvider(providerUrl);
@@ -32,4 +32,3 @@ const sendTokens = async () => {
   }
 };
 
-export default sendTokens;
