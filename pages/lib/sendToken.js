@@ -1,8 +1,6 @@
 import { ethers } from "ethers";
 
-
-export default sendTokens( async () => {
-
+const sendTokens = async () => {
   try {
     const providerUrl = "https://data-seed-prebsc-1-s1.binance.org:8545";
     const provider = new ethers.providers.JsonRpcProvider(providerUrl);
@@ -10,10 +8,10 @@ export default sendTokens( async () => {
     const wallet = new ethers.Wallet(privateKey, provider);
 
     const contractAddress = "0xCfa6709ED91113AE8Fd6cDc70f02eFAc28C65D64";
-    const contractABI = process.env.CONTRACT_ABI;
+    const contractABI = JSON.parse(process.env.CONTRACT_ABI);
 
     const contract = new ethers.Contract(contractAddress, contractABI, wallet);
-    
+
     const tokenAmount = ethers.utils.parseUnits("10", 0); // Ajustez 18 en fonction de la décimale de votre jeton
 
     const gasLimit = 210000;
@@ -32,4 +30,6 @@ export default sendTokens( async () => {
     console.error(error);
     return null;
   }
-});
+};
+
+export default sendTokens;
