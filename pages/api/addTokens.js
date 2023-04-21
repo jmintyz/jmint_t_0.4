@@ -1,6 +1,5 @@
 import { getSession } from "@auth0/nextjs-auth0";
 import React, { useState } from "react";
-import sendTokens from "../lib/sendToken.js";
 
 import stripeInit from 'stripe';
 
