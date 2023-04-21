@@ -1,3 +1,23 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Logo } from "../components/Logo";
+import blocImage from '../public/retina-display.jpg';
+
 export default function Home() {
-  return <div />;
+
+ 
+  return (
+  <div className="w-screen h-screen overflow-hidden flex justify-center items-center relative"> 
+    <Image src={blocImage} alt="bloc" fill className="absolute"/>
+    <div className="relative z-10 text-white px-10 py-5 text-center max-w-screen bg-slate-900/90 rounded-md backrop-blur-sm">
+      <Logo /><br/>
+      <p>
+        Mintez n importe quel fichier grace à la technologie IFPS et le protocole ERC-721 !<br/> 
+        Choisissez une blockchain et creez votre NFT rapidement et simplement.
+      </p><br/>
+      <Link href="/depot" className="btn">Commencer</Link>
+                
+      </div>
+    </div>
+    )
 }
